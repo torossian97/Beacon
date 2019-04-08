@@ -1,6 +1,7 @@
 package com.mistbeacon.beacon;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -59,7 +60,7 @@ public class line_chart extends Fragment {
     private LineChartData data;
     private int numberOfLines = 1;
     private int maxNumberOfLines = 4;
-    private int numberOfPoints = 6;
+    private int numberOfPoints = 12;
 
     float[][] randomNumbersTab = new float[maxNumberOfLines][numberOfPoints];
 
@@ -121,7 +122,7 @@ public class line_chart extends Fragment {
         fc = new FirebaseConnection();
         fc.FirebaseConnection();
 
-        fc.collection("HeartRate", 6, new FirebaseConnection.MyCallback(){
+        fc.collection("HeartRate", 12, new FirebaseConnection.MyCallback(){
 
             @Override
             public metricSet onCallback(List<metricSet> ms) {
@@ -230,7 +231,7 @@ public class line_chart extends Fragment {
             }
 
             Line line = new Line(values);
-            line.setColor(ChartUtils.COLORS[i]);
+            line.setColor(Color.parseColor("#223368"));//ChartUtils.COLORS[i]);
             line.setShape(shape);
             line.setCubic(isCubic);
             line.setFilled(isFilled);
@@ -251,21 +252,38 @@ public class line_chart extends Fragment {
             Axis axisX = new Axis();
             Axis axisY = new Axis().setHasLines(true);
             if (hasAxesNames) {
-                axisX.setName("Minutes");
-                axisY.setName("Stress");
+                axisX.setName("Time");
+                axisY.setName("Index");
             }
             data.setAxisXBottom(axisX);
             data.setAxisYLeft(axisY);
 
             axisX.setMaxLabelChars(6);//max label length, for example 600.00
             List<AxisValue> values = new ArrayList<>();
-            for(int i = 5; i >= 0; i -= 1){
-                AxisValue value = new AxisValue(5 - i);
-                String label = i*10 + " min";//some logic to format label
+            for(int i = 11; i >= 0; i -= 1){
+                AxisValue value = new AxisValue(11 - i);
+                String label = Integer.toString((17-i)%12);//some logic to format label
+                if((17-i)%12 < 6 && (17-i)%12 != 0){
+                    label += " pm";
+                }else if ((17-i)%12 == 0){
+                    label = "12 pm";
+                }else{
+                    label += " am";
+                }
                 value.setLabel(label);
                 values.add(value);
             }
             axisX.setValues(values);
+
+            axisY.setMaxLabelChars(6);//max label length, for example 600.00
+            List<AxisValue> valuesY = new ArrayList<>();
+            for(int i = 5; i >= 0; i -= 1){
+                AxisValue valueY = new AxisValue(i*20);
+                String label = Integer.toString(i);//some logic to format label
+                valueY.setLabel(label);
+                valuesY.add(valueY);
+            }
+            axisY.setValues(valuesY);
 
         } else {
             data.setAxisXBottom(null);

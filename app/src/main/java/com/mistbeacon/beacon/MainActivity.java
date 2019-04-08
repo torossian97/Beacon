@@ -47,11 +47,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private FusedLocationProviderClient fusedLocationClient;
     private TextView txtLocation;
     private metricSet ms;
+    private boolean lastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        lastFragment = false;
 
         //FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
         //tx.replace(R.id.home, new home());
@@ -169,20 +172,33 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()) {
             case R.id.home:
                 fragment = new home();
+                //animation
+                transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+                //
                 if(fragment_chart != null) transaction.remove(manager.findFragmentByTag("Frag_Chart_tag"));
                 if(fragment_bottom != null) transaction.remove(manager.findFragmentByTag("Frag_Bottom_tag"));
+                lastFragment = false;
                 break;
 
             case R.id.charts:
                 fragment = new charts();
+                //animation
+                if(lastFragment) transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+                else transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                //
                 transaction.replace(R.id.frameForChart, new line_chart(), "Frag_Chart_tag");
-                transaction.replace(R.id.frameForBottom, new pieChart(), "Frag_Bottom_tag");
+                transaction.replace(R.id.frameForBottom, new bottomChart(), "Frag_Bottom_tag");
+                lastFragment = false;
                 break;
 
             case R.id.exercises:
                 fragment = new barChart();
+                //animation
+                transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                //
                 if(fragment_chart != null) transaction.remove(manager.findFragmentByTag("Frag_Chart_tag"));
                 if(fragment_bottom != null) transaction.remove(manager.findFragmentByTag("Frag_Bottom_tag"));
+                lastFragment = true;
                 break;
         }
 

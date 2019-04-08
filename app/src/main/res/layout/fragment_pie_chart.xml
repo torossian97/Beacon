@@ -27,31 +27,125 @@
                 android:layout_height="match_parent"
                 android:paddingHorizontal="3dp"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:textSize="@dimen/metric_band"
-                    android:textStyle="bold"
-                    android:text="Phone Usage"
-                    android:textColor="#ffffff" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:textSize="@dimen/metric_band_sml"
-                    android:text="vs daily average"
-                    android:textColor="#00A2CE" />
 
-                <lecho.lib.hellocharts.view.PieChartView
-                    android:id="@+id/pie2"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="Least Stress"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff" />
+
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                </lecho.lib.hellocharts.view.PieChartView>
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="0dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#ffffff" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginVertical="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:src="@drawable/location"
+                    android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="7 locations"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/heart"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="3 spikes"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/screentime"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="Low"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/walking"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="5 km"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -60,7 +154,7 @@
             android:layout_height="175dp"
             android:layout_margin="5dp"
             android:clickable="false"
-            app:cardBackgroundColor="@color/darkmainop"
+            app:cardBackgroundColor="@color/yellow"
             android:layout_weight=".5">
 
             <LinearLayout
@@ -69,29 +163,121 @@
                 android:paddingHorizontal="3dp"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="0dp"
-                android:textSize="@dimen/metric_band"
-                android:textStyle="bold"
-                android:text="Liveliness"
-                android:textColor="#ffffff" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="0dp"
-                android:textSize="@dimen/metric_band_sml"
-                android:text="vs daily average"
-                android:textColor="#00A2CE" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="Most Stress"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff" />
 
-            <lecho.lib.hellocharts.view.PieChartView
-                android:id="@+id/pie1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-            </lecho.lib.hellocharts.view.PieChartView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="0dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#ffffff" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/location"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="2 locations"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/heart"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="11 spikes"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/screentime"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="High"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/walking"
+                        android:tint="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="14dp"
+                        android:text="2 km"
+                        android:textColor="#ffffff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             </LinearLayout>
 

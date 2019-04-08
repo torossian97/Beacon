@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:scrollbars="vertical"
-        android:background="#00ffffff">
+        android:background="#00FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -234,17 +234,17 @@
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stress" />
+                        android:text="Today" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Activity" />
+                        android:text="This Week" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Heart Rate" />
+                        android:text="This Month" />
 
                 </com.google.android.material.tabs.TabLayout>
 

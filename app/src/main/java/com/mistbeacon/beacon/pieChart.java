@@ -78,14 +78,14 @@ import java.util.List;
             setHasOptionsMenu(true);
             View rootView = inflater.inflate(R.layout.fragment_pie_chart, container, false);
 
-            chart = (PieChartView) rootView.findViewById(R.id.pie1);
-            chart.setOnValueTouchListener(new ValueTouchListener());
-            chart2 = (PieChartView) rootView.findViewById(R.id.pie2);
-            chart2.setOnValueTouchListener(new ValueTouchListener());
+            //chart = (PieChartView) rootView.findViewById(R.id.pie1);
+            //chart.setOnValueTouchListener(new ValueTouchListener());
+            //chart2 = (PieChartView) rootView.findViewById(R.id.pie2);
+            //chart2.setOnValueTouchListener(new ValueTouchListener());
 
-            generateData(this.data, this.chart);
+            //generateData(this.data, this.chart);
 
-            generateData(this.data2, this.chart2);
+            //generateData(this.data2, this.chart2);
             //prepareDataAnimation(this.data2);
             //chart2.startDataAnimation();
 

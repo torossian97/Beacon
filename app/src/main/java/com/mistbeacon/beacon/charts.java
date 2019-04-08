@@ -194,18 +194,20 @@ public class charts extends Fragment {
         FragmentTransaction transaction = manager.beginTransaction();
         switch (position) {
             case 0:
+                transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
                 transaction.replace(R.id.frameForChart, new line_chart(), "Frag_Chart_tag");
-                transaction.commit();
+                transaction.replace(R.id.frameForBottom, new bottomChart(), "Frag_Bottom_tag");
                 break;
             case 1:
+                transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
                 transaction.replace(R.id.frameForChart, new barChart(), "Frag_Chart_tag");
-                transaction.commit();
+                transaction.replace(R.id.frameForBottom, new pieChart(), "Frag_Bottom_tag");
                 break;
             case 2:
                 transaction.replace(R.id.frameForChart, new line_chart(), "Frag_Chart_tag");
-                transaction.commit();
                 break;
         }
+        transaction.commit();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

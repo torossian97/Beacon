@@ -1,6 +1,7 @@
 package com.mistbeacon.beacon;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import lecho.lib.hellocharts.gesture.ZoomType;
 import lecho.lib.hellocharts.listener.ColumnChartOnValueSelectListener;
 import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
 import lecho.lib.hellocharts.model.Column;
 import lecho.lib.hellocharts.model.ColumnChartData;
 import lecho.lib.hellocharts.model.SubcolumnValue;
@@ -104,8 +106,8 @@ public class barChart extends Fragment {
 
         generateData();
 
-        //prepareDataAnimation();
-        //chart.startDataAnimation();
+        prepareDataAnimation();
+        chart.startDataAnimation();
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -201,7 +203,7 @@ public class barChart extends Fragment {
 
     private void generateDefaultData() {
         int numSubcolumns = 1;
-        int numColumns = 8;
+        int numColumns = 7;
         // Column can have many subcolumns, here by default I use 1 subcolumn in each of 8 columns.
         List<Column> columns = new ArrayList<Column>();
         List<SubcolumnValue> values;
@@ -209,8 +211,16 @@ public class barChart extends Fragment {
 
             values = new ArrayList<SubcolumnValue>();
             for (int j = 0; j < numSubcolumns; ++j) {
-                float val = (float) Math.random() * 50f + 5;
-                int clr = val > 20 ? ChartUtils.COLOR_BLUE:ChartUtils.COLOR_RED;
+                float val = (float) Math.random() * 50f + 10;
+                int clr;
+                if(val < 35){
+                    if(val < 20)
+                        clr = Color.parseColor("#838CA8");
+                    else
+                        clr = Color.parseColor("#5B678E");
+                }else{
+                    clr = Color.parseColor("#223368");
+                }
                 values.add(new SubcolumnValue(val, clr));
             }
 
@@ -227,11 +237,48 @@ public class barChart extends Fragment {
             Axis axisX = new Axis();
             Axis axisY = new Axis().setHasLines(true);
             if (hasAxesNames) {
-                axisX.setName("Axis X");
-                axisY.setName("Axis Y");
+                axisX.setName("Day");
+                axisY.setName("Index");
             }
             data.setAxisXBottom(axisX);
             data.setAxisYLeft(axisY);
+
+            axisX.setMaxLabelChars(6);//max label length, for example 600.00
+            List<AxisValue> valuesX = new ArrayList<>();
+            for(int i = 6; i >= 0; i -= 1){
+                AxisValue value = new AxisValue(i);
+                String label = "";//some logic to format label
+                switch(i){
+                    case 0: label = "Mon";
+                        break;
+                    case 1: label = "Tue";
+                        break;
+                    case 2: label = "Wed";
+                        break;
+                    case 3: label = "Thu";
+                        break;
+                    case 4: label = "Fri";
+                        break;
+                    case 5: label = "Sat";
+                        break;
+                    case 6: label = "Sun";
+                        break;
+                }
+                value.setLabel(label);
+                valuesX.add(value);
+            }
+            axisX.setValues(valuesX);
+
+            axisY.setMaxLabelChars(6);//max label length, for example 600.00
+            List<AxisValue> valuesY = new ArrayList<>();
+            for(int i = 5; i >= 0; i -= 1){
+                AxisValue valueY = new AxisValue(i*10);
+                String label = Integer.toString(i);//some logic to format label
+                valueY.setLabel(label);
+                valuesY.add(valueY);
+            }
+            axisY.setValues(valuesY);
+
         } else {
             data.setAxisXBottom(null);
             data.setAxisYLeft(null);
@@ -288,7 +335,7 @@ public class barChart extends Fragment {
      */
     private void generateStackedData() {
         int numSubcolumns = 4;
-        int numColumns = 8;
+        int numColumns = 7;
         // Column can have many stacked subcolumns, here I use 4 stacke subcolumn in each of 4 columns.
         List<Column> columns = new ArrayList<Column>();
         List<SubcolumnValue> values;
@@ -370,7 +417,7 @@ public class barChart extends Fragment {
     private void generateNegativeStackedData() {
 
         int numSubcolumns = 4;
-        int numColumns = 8;
+        int numColumns = 7;
         // Column can have many stacked subcolumns, here I use 4 stacke subcolumn in each of 4 columns.
         List<Column> columns = new ArrayList<Column>();
         List<SubcolumnValue> values;
@@ -479,8 +526,7 @@ public class barChart extends Fragment {
     private void prepareDataAnimation() {
         for (Column column : data.getColumns()) {
             for (SubcolumnValue value : column.getValues()) {
-                //value.setTarget((float) Math.random() * 100);
-                value.setTarget(50);
+                value.setTarget((float) Math.random() * 50f + 10);
             }
         }
     }

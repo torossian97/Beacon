@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#223368</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3F51B5</color>
     <color name="lightgray">#ededed</color>
@@ -10,10 +10,14 @@
     <color name="darkblue">#23283a</color>
     <color name="testcolorblue">#152b38</color>
     <color name="pink">#fe104d</color>
+    <color name="pinkop">#AAfe104d</color>
     <color name="lightmain">#00A2CE</color>
     <color name="lightmainop">#7c98ab</color>
     <color name="middlemain">#1F6D99</color>
     <color name="darkmain">#223368</color>
-    <color name="darkmainop">#FF223368</color>
+    <color name="darkmainop">#5A668D</color>
+    <color name="darkmain1">#5B678E</color>
+    <color name="darkmainop2">#88223368</color>
+    <color name="darkmain2">#838CA8</color>
     <color name="midgrey">#81838A</color>
 </resources>
