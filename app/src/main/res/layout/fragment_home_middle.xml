@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".homeMiddle">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        app:cardBackgroundColor="#ffffff"
+        android:layout_weight=".5">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Observations"
+                android:textColor="@android:color/black" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/lightgray" />
+
+            <!-- One bar chart-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginVertical="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:padding="0dp"
+                    android:src="@drawable/metrics"
+                    android:tint="@color/darkmain1" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginHorizontal="10dp"
+                        app:rcBackgroundColor="@color/lightgray"
+                        app:rcBackgroundPadding="0dp"
+                        app:rcMax="150"
+                        app:rcProgress="150"
+                        app:rcProgressColor="@color/darkmainop2"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Your activity today is above average, and it looks like your stress is lower too!"
+                        android:textColor="@android:color/darker_gray" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Low"
+                    android:textColor="@color/darkmainop2" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- end of bar -->
+
+            <!-- One bar chart-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginVertical="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:padding="0dp"
+                    android:src="@drawable/metrics"
+                    android:tint="@color/darkmain1" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginHorizontal="10dp"
+                        app:rcBackgroundColor="@color/lightgray"
+                        app:rcBackgroundPadding="0dp"
+                        app:rcMax="150"
+                        app:rcProgress="150"
+                        app:rcProgressColor="@color/darkmainop2"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="You've stayed in one spot today for a while, only visiting 2 locations. Your daily average is usually 4 locations."
+                        android:textColor="@android:color/darker_gray" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Low"
+                    android:textColor="@color/darkmainop2" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        app:cardBackgroundColor="#ffffff"
+        android:layout_weight=".5">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="5dp"
+            android:text="Exercises"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/lightgray" />
+
+    <!-- One bar chart-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:padding="0dp"
+            android:src="@drawable/brain"
+            android:tint="@color/darkmain1" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="10dp"
+                app:rcBackgroundColor="@color/lightgray"
+                app:rcBackgroundPadding="0dp"
+                app:rcMax="150"
+                app:rcProgress="150"
+                app:rcProgressColor="@color/darkmainop2"
+                app:rcRadius="5dp"
+                app:rcReverse="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="0dp"
+                android:layout_marginLeft="10dp"
+                android:text="You may not need it now, but if you're ever feeling a bit overwhelmed, try this breathing exercise."
+                android:textColor="@android:color/darker_gray" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:text="Low"
+            android:textColor="@color/darkmainop2" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!-- end of bar -->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>

@@ -185,7 +185,7 @@
                             app:rcBackgroundColor="@color/lightgray"
                             app:rcBackgroundPadding="0dp"
                             app:rcMax="150"
-                            app:rcProgress="50"
+                            app:rcProgress="120"
                             app:rcProgressColor="@color/darkmain"
                             app:rcRadius="15dp"
                             app:rcReverse="false" />
@@ -208,7 +208,7 @@
                         android:padding="0dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="0dp"
-                        android:text="Very Low"
+                        android:text="High"
                         android:textColor="@color/darkmain" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

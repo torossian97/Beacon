@@ -39,7 +39,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                                                                 barChart.OnFragmentInteractionListener,
                                                                 line_chart.OnFragmentInteractionListener,
                                                                 bottomChart.OnFragmentInteractionListener,
-                                                                pieChart.OnFragmentInteractionListener{
+                                                                pieChart.OnFragmentInteractionListener,
+                                                                homeMiddle.OnFragmentInteractionListener,
+                                                                monthlyChart.OnFragmentInteractionListener,
+                                                                monthBottom.OnFragmentInteractionListener{
 
     private TextView mTextMessage;
     private int locationRequestCode = 1000;
@@ -62,6 +65,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         //loading the default fragment
         loadFragment(new home());
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.frame, new home(), "Frag_Top_tag");
+        transaction.add(R.id.frameForChart, new homeMiddle(), "Frag_Chart_tag");
+        transaction.commit();
 
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
@@ -175,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 //animation
                 transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
                 //
-                if(fragment_chart != null) transaction.remove(manager.findFragmentByTag("Frag_Chart_tag"));
+                transaction.replace(R.id.frameForChart, new homeMiddle(), "Frag_Chart_tag");
                 if(fragment_bottom != null) transaction.remove(manager.findFragmentByTag("Frag_Bottom_tag"));
                 lastFragment = false;
                 break;

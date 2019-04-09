@@ -204,7 +204,9 @@ public class charts extends Fragment {
                 transaction.replace(R.id.frameForBottom, new pieChart(), "Frag_Bottom_tag");
                 break;
             case 2:
-                transaction.replace(R.id.frameForChart, new line_chart(), "Frag_Chart_tag");
+                transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                transaction.replace(R.id.frameForChart, new monthlyChart(), "Frag_Chart_tag");
+                transaction.replace(R.id.frameForBottom, new monthBottom(), "Frag_Bottom_tag");
                 break;
         }
         transaction.commit();
